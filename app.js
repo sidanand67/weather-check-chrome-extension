@@ -7,6 +7,24 @@ let city = localStorage.getItem("city");
 
 if (city){
     cityEl.value = city; 
+    renderWeather(); 
+}
+
+function renderWeather(){
+    if (cityEl.value.length !== 0) {
+        let city = cityEl.value;
+        localStorage.setItem("city", city);
+        fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        )
+            .then((response) => response.json())
+            .then(function (data) {
+                // console.log(data.main.temp);
+
+                weatherResult.textContent = `Currently it's ${data.main.temp}°C in ${city.toUpperCase()}`;
+                getDateTime();
+            });
+    }
 }
 
 function getDateTime(){
@@ -18,21 +36,4 @@ function getDateTime(){
     console.log(time); 
 }
 
-checkBtn.addEventListener("click", function(){
-    if (cityEl.value.length !== 0){
-        let city = cityEl.value; 
-        localStorage.setItem("city", city); 
-        fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-        )
-        .then(response => response.json())
-        .then(function(data){
-            // console.log(data.main.temp); 
-            weatherResult.textContent = `Currently it's ${data.main.temp}°C in ${city.toUpperCase()}`;
-            getDateTime(); 
-        });
-        
 
-
-    }
-})
