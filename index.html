@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h2>Weather Check ☁️</h2>
-        <form>
+        <form onsubmit="event.preventDefault()">
             <input id="city-el" type="text" placeholder="City" required>
             <button id="check-btn">Check</button>
             <p id="weather-result"></p>
