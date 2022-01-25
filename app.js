@@ -12,17 +12,27 @@ if (city){
 
 function renderWeather(){
     if (cityEl.value.length !== 0) {
-        let city = cityEl.value;
+        let city = cityEl.value.toLowerCase();
         localStorage.setItem("city", city);
         fetch(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
         )
             .then((response) => response.json())
             .then(function (data) {
-                // console.log(data.main.temp);
 
-                weatherResult.textContent = `Currently it's ${data.main.temp}°C in ${city.toUpperCase()}`;
-                getDateTime();
+                if(data.cod === 200){
+                    weatherResult.textContent = `Currently it's ${data.main.temp}°C in ${city.toUpperCase()}.`;
+                    weatherResult.style.color = "green"; 
+                    weatherResult.style.fontStyle = "normal"; 
+                    lastChecked.style.visibility = "visible"; 
+                    getDateTime();
+                }
+                else {
+                    weatherResult.textContent = "City not found";
+                    weatherResult.style.color = "red"; 
+                    weatherResult.style.fontStyle = "italic";  
+                    lastChecked.style.visibility = "hidden"; 
+                }
             });
     }
 }
@@ -31,9 +41,7 @@ function getDateTime(){
     let today = new Date(); 
     let date = `${today.getDate()}-${today.getMonth()+1}-${today.getFullYear()}`
     let time = `${today.getHours()}:${today.getMinutes()}`
-    lastChecked.textContent = `Last Checked: ${time} ${date}`
-    console.log(date); 
-    console.log(time); 
+    lastChecked.textContent = `Last checked on ${date} at ${time}`
 }
 
 
