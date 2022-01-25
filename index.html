@@ -11,16 +11,16 @@
 <body>
     <div class="container">
         <h2 class="title">Weather Check <span id="emoji"></span></h2>
-        <form onsubmit="event.preventDefault()">
-            <div class="input-grp">
-                <input id="city-el" type="text" placeholder="City" required>
-                <button id="check-btn" onclick="renderWeather()">Check</button>
-            </div>
-            <div class="results-container">
-                <p id="weather-result"></p>
-                <p id="last-checked"></p>
-            </div>
-        </form>
+
+        <div class="input-grp">
+            <input id="city-el" type="text" placeholder="City" required>
+            <button id="check-btn">Check</button>
+        </div>
+        <div class="results-container">
+            <p id="weather-result"></p>
+            <p id="last-checked"></p>
+        </div>
+
     </div>
 
     <script src="./app.js"></script>

@@ -73,6 +73,6 @@ if (city) {
     cityEl.value = city;
     renderWeather();
 }
-
+checkBtn.addEventListener("click", renderWeather); 
 
 

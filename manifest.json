@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Weather Check",
+    "description": "Check the weather of your city.",
+    "author": "Sidharth Anand", 
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    }
+}
