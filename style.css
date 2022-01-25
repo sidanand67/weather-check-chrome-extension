@@ -1,0 +1,72 @@
+*{
+    margin: 0; 
+    box-sizing: border-box;
+    font-family: "Open Sans"; 
+}
+
+.container{
+    display: flex; 
+    flex-direction: column;
+    min-width: 200px; 
+    /* align-items: center; */
+}
+
+.title{
+    color: white; 
+    padding-top: 0.7em;
+    padding-bottom: 0.5em;
+    letter-spacing: 0.01 rem;
+    align-self: center;
+}   
+
+.input-grp{
+    display: flex; 
+    padding: 1em 0.3em 0em;
+}
+
+.input-grp input{
+    flex:1; 
+    padding: 0.2em;
+    margin-left: 0.4em;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.input-grp button{
+    padding: 0.3em 1.1em;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid darkgreen; 
+    background: darkgreen; 
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    margin-left: 0.3em;
+    margin-right: 0.4em;
+}
+
+.input-grp button:hover{
+    background-color: green;
+    border: 1px solid green;
+}
+
+.input-grp button:active{
+    transform: translateY(2px); 
+}
+
+.results-container{
+    padding: 1em 0.3em;
+    text-align: center;
+}
+
+
+.results-container > #weather-result{
+    font-weight: bold;
+    color: white;
+}
+
+.results-container > #last-checked{
+    font-size: 0.9rem;
+    margin-top: 0.2em;
+}
