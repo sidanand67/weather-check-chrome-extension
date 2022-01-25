@@ -74,5 +74,5 @@ if (city) {
     renderWeather();
 }
 checkBtn.addEventListener("click", renderWeather); 
-
-
+setBackground(); 
+setEmoji(); 
