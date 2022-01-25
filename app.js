@@ -3,10 +3,8 @@ const checkBtn = document.getElementById("check-btn");
 const weatherResult = document.getElementById("weather-result"); 
 const lastChecked = document.getElementById("last-checked"); 
 const API_KEY = "65780f0197ce4c21a61d86f552ff2d4a";
-const divContainer = document.getElementById("container"); 
 const emojiEl = document.getElementById("emoji"); 
 let city = localStorage.getItem("city"); 
-
 
 
 function renderWeather(){
@@ -32,6 +30,7 @@ function renderWeather(){
                 else {
                     weatherResult.textContent = "City not found";
                     weatherResult.style.color = "#9b2226"; 
+                    // weatherResult.style.color = "red"; 
                     weatherResult.style.fontSize = "20px"; 
                     weatherResult.style.fontStyle = "italic";  
                     lastChecked.style.visibility = "hidden"; 
@@ -51,11 +50,11 @@ function getTime(){
 
 function setBackground(){
     let today = new Date(); 
-    if (today.getHours() >= 6 && today.getHours() <= 18){ 
-        document.body.background = "images/day.jpeg"; 
+    if (today.getHours() >= 6 && today.getHours() <= 18){  
+        document.body.style.background = "#0096c7";
     }
     else {
-        document.body.background = "images/night.jpg"; 
+        document.body.style.background = "#001524"; 
     }   
 }
 

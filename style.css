@@ -69,4 +69,5 @@
 .results-container > #last-checked{
     font-size: 0.9rem;
     margin-top: 0.2em;
+    color: white; 
 }
