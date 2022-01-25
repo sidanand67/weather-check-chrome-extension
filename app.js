@@ -27,7 +27,7 @@ function renderWeather(){
                     weatherResult.style.color = "white"; 
                     weatherResult.style.fontSize = "1rem"; 
                     lastChecked.style.visibility = "visible"; 
-                    getDateTime();
+                    getTime();
                 }
                 else {
                     weatherResult.textContent = "City not found";
@@ -40,14 +40,13 @@ function renderWeather(){
     }
 }
 
-function getDateTime(){
+function getTime(){
     let today = new Date(); 
-    let date = `${today.getDate()}-${today.getMonth()+1}-${today.getFullYear()}`
 
     let time = `
         ${today.getHours() < 10 ? "0" + today.getHours() : today.getHours()}:${today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes()}:${today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds()}
     `
-    lastChecked.textContent = `Last checked on ${date} at ${time}`
+    lastChecked.textContent = `Last checked on ${time}`
 }
 
 function setBackground(){
